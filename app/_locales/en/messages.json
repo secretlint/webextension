@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "secretlint",
+    "description": "secretlint checks credentials in you request"
+  },
+  "appShortName": {
+    "message": "secretlint",
+    "description": "secretlint checks credentials in you request"
+  },
+  "appDescription": {
+    "message": "secretlint",
+    "description": "secretlint checks credentials in you request"
+  },
+  "browserActionTitle": {
+    "message": "secretlint",
+    "description": "secretlint checks credentials in you request"
+  }
+}

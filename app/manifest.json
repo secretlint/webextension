@@ -1,0 +1,37 @@
+{
+  "name": "__MSG_appName__",
+  "short_name": "__MSG_appShortName__",
+  "description": "__MSG_appDescription__",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "icons": {
+    "32": "images/icon-32.png",
+    "96": "images/icon-96.png",
+    "192": "images/icon-192.png"
+  },
+  "background": {
+    "scripts": [
+      "scripts/background.js"
+    ]
+  },
+  "devtools_page": "pages/dev_tools.html",
+  "browser_action": {
+    "default_icon": {
+      "32": "images/icon-32.png",
+      "96": "images/icon-96.png",
+      "192": "images/icon-192.png"
+    },
+    "default_title": "__MSG_browserActionTitle__",
+    "default_popup": "pages/popup.html"
+  },
+  "permissions": [
+    "<all_urls>",
+    "webNavigation"
+  ],
+  "__firefox__applications": {
+    "gecko": {
+      "id": "secretlint@secretlint.github.io"
+    }
+  }
+}
