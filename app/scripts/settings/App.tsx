@@ -8,7 +8,6 @@ export const useApp = () => {
     const [settings, setSettings] = useState<Partial<SettingSchema>>();
     useEffect(() => {
         browser.storage.local.get(["settings"]).then(({ settings }) => {
-            console.log(settings);
             setSettings(settings as Partial<SettingSchema>);
         });
     }, []);
@@ -20,6 +19,11 @@ export const App = () => {
         <Form
             formData={settings}
             schema={SCHEMA.definitions.SettingSchema as any}
+            uiSchema={{
+                enableConsoleIntegration: {
+                    "ui:help": "If you enable it, report found secrets into console panel."
+                }
+            }}
             onSubmit={(e) => {
                 browser.storage.local.set({
                     settings: e.formData
