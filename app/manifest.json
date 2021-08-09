@@ -23,12 +23,14 @@
       "192": "images/icon-192.png"
     },
     "default_title": "__MSG_browserActionTitle__",
-    "default_popup": "pages/dev_tools_panel.html"
+    "default_popup": "pages/settings.html"
   },
   "permissions": [
     "<all_urls>",
-    "webNavigation"
+    "webNavigation",
+    "storage"
   ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
   "__firefox__applications": {
     "gecko": {
       "id": "secretlint@secretlint.github.io"

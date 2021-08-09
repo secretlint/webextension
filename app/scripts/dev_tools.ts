@@ -4,6 +4,8 @@ import { lintContent } from "./secretlint/lint";
 import { sendMessage } from "webext-bridge";
 import { SecretLintMessage } from "./types";
 import jsesc from "jsesc";
+import { SettingSchema } from "./settings/SettingSchema";
+import { SCHEMA } from "./settings/SettingSchema.validator";
 
 const headersToEnv = (headers: Request["headers"]): string => {
     return headers
@@ -12,7 +14,15 @@ const headersToEnv = (headers: Request["headers"]): string => {
         })
         .join("\n");
 };
-const lintContentAndSend = async ({ url, content }: { url: string; content: string }): Promise<SecretLintMessage[]> => {
+const lintContentAndSend = async ({
+    url,
+    content,
+    setting
+}: {
+    url: string;
+    content: string;
+    setting: SettingSchema;
+}): Promise<SecretLintMessage[]> => {
     const result = await lintContent({
         content,
         url: url
@@ -22,8 +32,8 @@ const lintContentAndSend = async ({ url, content }: { url: string; content: stri
     }
     const lintMessages: SecretLintMessage[] = result.messages.map((message) => {
         const sliceContent = content.slice(
-            Math.max(message.range[0] - 32, 0),
-            Math.min(message.range[1] + 32, content.length)
+            Math.max(message.range[0] - setting.sliceBefore, 0),
+            Math.min(message.range[1] + setting.sliceAfter, content.length)
         );
         return {
             ...message,
@@ -36,6 +46,13 @@ const lintContentAndSend = async ({ url, content }: { url: string; content: stri
 };
 (async function main() {
     await browser.devtools.panels.create("Secretlint", "/images/icon-192.png", "/pages/dev_tools_panel.html");
+    const storage = await browser.storage.local.get(["settings"]);
+    const setting = {
+        sliceBefore: SCHEMA.definitions.SettingSchema.properties.sliceBefore.default,
+        sliceAfter: SCHEMA.definitions.SettingSchema.properties.sliceAfter.default,
+        enableConsoleIntegration: SCHEMA.definitions.SettingSchema.properties.enableConsoleIntegration.default,
+        ...storage?.settings
+    } as SettingSchema;
     const onRequestFinished = async (
         request: DevtoolsNetwork.Request & { request?: Request; serverIPAddress?: string }
     ) => {
@@ -47,12 +64,20 @@ const lintContentAndSend = async ({ url, content }: { url: string; content: stri
             Object.keys(harRequest.headers).length > 0
                 ? lintContentAndSend({
                       url: "request-header:" + url,
-                      content: headersToEnv(harRequest.headers)
+                      content: headersToEnv(harRequest.headers),
+                      setting
                   })
                 : Promise.resolve([]);
-        const contentLinting = !isBinary && content ? lintContentAndSend({ url, content }) : Promise.resolve([]);
+        const contentLinting =
+            !isBinary && content
+                ? lintContentAndSend({
+                      url,
+                      content,
+                      setting
+                  })
+                : Promise.resolve([]);
         const messages = (await Promise.all([headerLinting, contentLinting])).flat();
-        if (messages.length > 0) {
+        if (setting.enableConsoleIntegration && messages.length > 0) {
             console.log(JSON.stringify(messages));
             browser.devtools.inspectedWindow.eval(`console.group("Found ${
                 messages.length

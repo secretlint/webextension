@@ -40,6 +40,7 @@
     "dev": "webextension-toolbox dev",
     "build": "webextension-toolbox build",
     "clean": "rimraf lib/ module/",
+    "update:schema": "create-validator-ts ./app/scripts/settings/SettingSchema.ts",
     "prepublishOnly": "npm run clean && npm run build"
   },
   "lint-staged": {
@@ -60,6 +61,7 @@
     "@types/node": "^16.4.13",
     "@types/react": "^17.0.16",
     "@types/react-dom": "^17.0.9",
+    "create-validator-ts": "^2.0.0",
     "css-loader": "^6.2.0",
     "lint-staged": "^11.1.2",
     "mocha": "^9.0.3",
@@ -68,13 +70,14 @@
     "rimraf": "^3.0.2",
     "style-loader": "^3.2.1",
     "ts-loader": "^9.2.5",
-    "ts-node": "^10.1.0",
+    "ts-node": "^10.2.0",
     "ts-node-test-register": "^10.0.0",
     "typescript": "^4.3.5",
     "webextension-toolbox": "^4.0.3",
     "webpack-watched-glob-entries-plugin": "^2.1.10"
   },
   "dependencies": {
+    "@rjsf/core": "^3.0.0",
     "@secretlint/core": "^3.3.0",
     "@secretlint/secretlint-rule-pattern": "^3.3.0",
     "@secretlint/secretlint-rule-preset-recommend": "^3.3.0",
