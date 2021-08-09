@@ -30,6 +30,13 @@ Secretlint WebExtension help web developer to notice exposed credential.
 - [ ] Firefox
 - [ ] Chrome
 
+## Development
+
+    yarn install
+    # Chrome
+    yarn dev chrome
+    # Firefox
+    yarn dev firefox
 
 ## Changelog
 
