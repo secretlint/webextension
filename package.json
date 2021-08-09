@@ -34,7 +34,7 @@
     "src/"
   ],
   "scripts": {
-    "test": "mocha \"test/**/*.ts\"",
+    "test": "yarn run build",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
     "prepare": "git config --local core.hooksPath .githooks",
     "dev": "webextension-toolbox dev",

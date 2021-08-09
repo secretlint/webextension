@@ -2,15 +2,18 @@
 
 Check secrets in your request/response using secretlint.
 
+![screenshot](img.png)
+
+## Features
+
+- Check that request/response includes credentials
+- DevTools integration
+
 ## Install
 
-Install with [npm](https://www.npmjs.com/):
+- [ ] Firefox
+- [ ] Chrome
 
-    npm install webextension
-
-## Usage
-
-- [ ] Write usage instructions
 
 ## Changelog
 
