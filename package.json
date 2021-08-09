@@ -34,11 +34,12 @@
     "src/"
   ],
   "scripts": {
-    "test": "yarn run build",
+    "test": "yarn run type-check",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
     "prepare": "git config --local core.hooksPath .githooks",
     "dev": "webextension-toolbox dev",
     "build": "webextension-toolbox build",
+    "type-check": "tsc",
     "clean": "rimraf lib/ module/",
     "update:schema": "create-validator-ts ./app/scripts/settings/SettingSchema.ts",
     "prepublishOnly": "npm run clean && npm run build"
