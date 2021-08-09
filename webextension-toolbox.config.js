@@ -16,6 +16,10 @@ module.exports = {
             test: /\.tsx?$/,
             loader: "ts-loader"
         });
+        config.module.rules.push({
+            test: /\.css$/,
+            use: ["style-loader", "css-loader"]
+        });
         config.plugins.push(new NodePolyfillPlugin());
         // Important: return the modified config
         return config;

@@ -1,0 +1,21 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.MessageList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.MessageListItem {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid #ddd;
+}
+
+.MessageNotFound {
+    padding: 12px 24px;
+}

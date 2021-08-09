@@ -1,0 +1,17 @@
+details {
+    padding: 0.6rem 1rem;
+}
+
+summary {
+    cursor: pointer;
+}
+
+details[open] {
+    /* Adjust the <details> padding while open */
+    padding-bottom: 0.75rem;
+}
+
+details[open] summary {
+    /* Adjust the <details> padding while open */
+    margin-bottom: 6px;
+}

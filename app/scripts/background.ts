@@ -1,34 +1,58 @@
 import { isInternalEndpoint, onMessage } from "webext-bridge";
-import { SecretLintCoreResultMessage } from "@secretlint/types";
 import { browser } from "webextension-polyfill-ts";
+import { SecretLintMessage } from "./types";
 
 const lintManager = (() => {
-    let _messages: SecretLintMessage[] = [];
+    let _messages = new Map<string, SecretLintMessage[]>();
     return {
-        get() {
-            return _messages;
+        get(url: string) {
+            return _messages.get(url);
         },
-        update(messages: SecretLintMessage[]) {
-            _messages = messages;
+        update(url: string, messages: SecretLintMessage[]) {
+            _messages.set(url, messages);
+        },
+        add(url: string, messages: SecretLintMessage[]) {
+            const currentMessages = _messages.get(url) ?? [];
+            _messages.set(url, currentMessages.concat(messages));
+        },
+        delete(url: string) {
+            _messages.delete(url);
         },
         clear() {
-            _messages = [];
-            console.log("clearn", _messages);
+            _messages.clear();
         }
     };
 })();
-onMessage("lint-messages", (message) => {
+
+onMessage("lint-messages", async (message) => {
     const { data, sender } = message;
-    if (isInternalEndpoint(sender)) {
-        lintManager.update(data as SecretLintMessage[]);
+    const tab = await browser.tabs.get(sender.tabId);
+    if (isInternalEndpoint(sender) && tab && tab.url) {
+        lintManager.add(tab.url, data as SecretLintMessage[]);
     }
+    return {};
 });
-onMessage("pull-messages", ({ sender }) => {
+onMessage("pull-messages", async ({ sender }) => {
+    const tab = await browser.tabs.get(sender.tabId);
     if (!isInternalEndpoint(sender)) {
         throw new Error("no support sender");
     }
-    return lintManager.get();
+    if (!tab) {
+        throw new Error("not found sender tab");
+    }
+    if (!tab.url) {
+        throw new Error("not found sender tab");
+    }
+    return lintManager.get(tab.url) ?? [];
 });
-browser.webNavigation.onBeforeNavigate.addListener(function () {
-    lintManager.clear();
+
+onMessage("clear-messages", async ({ sender }) => {
+    if (isInternalEndpoint(sender)) {
+        lintManager.clear();
+    }
+    return {};
+});
+
+browser.webNavigation.onCommitted.addListener((details) => {
+    lintManager.delete(details.url);
 });
