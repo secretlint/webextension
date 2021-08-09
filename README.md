@@ -1,4 +1,4 @@
-# webextension
+# Secretlint WebExtension
 
 Check secrets in your request/response using secretlint.
 
@@ -8,6 +8,22 @@ Check secrets in your request/response using secretlint.
 
 - Check that request/response includes credentials
 - DevTools integration
+
+## Motivation
+
+Everyone makes mistakes.
+
+A developer sometimes expose own credentials like OAuth token in a website accidentally.
+
+[secretlint](https://github.com/secretlint/secretlint) can found credentials in file.
+However, The exposed credentials come from environments variables or Database, so These are not embed in a file.
+
+We want to found these exposed credentials.
+
+Security research use proxy software like [Burp Suite](https://portswigger.net/burp), but web developer use DevTools instead of it.
+
+Secretlint WebExtension integrate to DevTools in Chrome/Firefox.
+Secretlint WebExtension help web developer to notice exposed credential.
 
 ## Install
 
