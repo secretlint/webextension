@@ -78,10 +78,8 @@ const lintContentAndSend = async ({
                 : Promise.resolve([]);
         const messages = (await Promise.all([headerLinting, contentLinting])).flat();
         if (setting.enableConsoleIntegration && messages.length > 0) {
-            console.log(JSON.stringify(messages));
-            browser.devtools.inspectedWindow.eval(`console.group("Found ${
-                messages.length
-            } secrets. For more details see Secretlint panel.");
+            browser.tabs.executeScript({
+                code: `console.group("Found ${messages.length} secrets. For more details see Secretlint panel.");
 ${messages.map((message) => {
     return `console.error("${jsesc(message.ruleId, {
         quotes: "double"
@@ -92,7 +90,8 @@ ${messages.map((message) => {
     })})`;
 })}
 console.groupEnd("Found ${messages.length} secrets");
-`);
+`
+            });
         }
     };
     browser.devtools.network.onRequestFinished.addListener(onRequestFinished);

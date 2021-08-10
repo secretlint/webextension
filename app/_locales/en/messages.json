@@ -1,15 +1,15 @@
 {
   "appName": {
     "message": "secretlint",
-    "description": "secretlint checks credentials in yoor request/response"
+    "description": "secretlint founds credentials in yoor request/response."
   },
   "appShortName": {
     "message": "secretlint",
-    "description": "secretlint checks credentials in yoor request/response"
+    "description": "secretlint founds credentials in yoor request/response."
   },
   "appDescription": {
     "message": "Integrate secretlint into DevTools.",
-    "description": "secretlint checks credentials in yoor request/response"
+    "description": "secretlint founds credentials in yoor request/response."
   },
   "browserActionTitle": {
     "message": "secretlint",
