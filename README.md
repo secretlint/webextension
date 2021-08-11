@@ -8,6 +8,8 @@ Check secrets in your request/response using secretlint.
 
 - Check that request/response includes credentials
 - DevTools integration
+    - Output found credentials to "Console" panel(option)
+    - Output found credentials to "Secretlint" panel
 
 ## Motivation
 
