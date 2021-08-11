@@ -29,7 +29,7 @@ Secretlint WebExtension help web developer to notice exposed credential.
 
 ## Install
 
-- [ ] Firefox
+- Install from <https://addons.mozilla.org/ja/firefox/addon/secretlint/>
 - [ ] Chrome
 
 ## Development
