@@ -20,7 +20,7 @@ However, The exposed credentials come from environments variables or Database, s
 
 We want to found these exposed credentials.
 
-Security research use proxy software like [Burp Suite](https://portswigger.net/burp), but web developer use DevTools instead of it.
+Security researcher use proxy software like [Burp Suite](https://portswigger.net/burp), but web developer use DevTools instead of it.
 
 Secretlint WebExtension integrate to DevTools in Chrome/Firefox.
 Secretlint WebExtension help web developer to notice exposed credential.
