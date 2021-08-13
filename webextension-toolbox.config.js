@@ -3,7 +3,7 @@ const GlobEntriesPlugin = require("webpack-watched-glob-entries-plugin");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
-    webpack: (config, { dev, vendor }) => {
+    webpack: (config) => {
         // Add typescript loader. supports .ts and .tsx files as entry points
         config.resolve.extensions.push(".ts");
         config.resolve.extensions.push(".tsx");

@@ -39,14 +39,14 @@ export const MessageList = () => {
                                 <b>{message.ruleId}</b> {message.message}
                                 <p style={{ margin: 0 }}>
                                     📍{" "}
-                                    <a href={message.url} target={"_blank"}>
+                                    <a href={message.url} target={"_blank"} rel="noreferrer">
                                         {message.url}
                                     </a>
                                 </p>
                                 {message.docsUrl && (
                                     <footer>
                                         📝{" "}
-                                        <a href={message.docsUrl} target={"_blank"}>
+                                        <a href={message.docsUrl} target={"_blank"} rel="noreferrer">
                                             {" "}
                                             Document
                                         </a>

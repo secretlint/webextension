@@ -3,7 +3,7 @@ import { browser } from "webextension-polyfill-ts";
 import { SecretLintMessage } from "./types";
 
 const lintManager = (() => {
-    let _messages = new Map<string, SecretLintMessage[]>();
+    const _messages = new Map<string, SecretLintMessage[]>();
     return {
         get(url: string) {
             return _messages.get(url);
