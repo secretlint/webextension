@@ -2,6 +2,9 @@
 
 Secretlint founds credentials that are included in your request/response.
 
+- Firefox: <https://addons.mozilla.org/ja/firefox/addon/secretlint/>
+- Chrome: <https://chrome.google.com/webstore/detail/secretlint/hidpojbnemkajlnibhmeilpgoddkjjkf>
+
 ![screenshot](img.png)
 
 ## Features
@@ -29,8 +32,8 @@ Secretlint WebExtension help web developer to notice exposed credential.
 
 ## Install
 
-- Install from <https://addons.mozilla.org/ja/firefox/addon/secretlint/>
-- [ ] Chrome
+- Firefox: <https://addons.mozilla.org/ja/firefox/addon/secretlint/>
+- Chrome: <https://chrome.google.com/webstore/detail/secretlint/hidpojbnemkajlnibhmeilpgoddkjjkf>
 
 ## Usage
 
@@ -44,11 +47,11 @@ Secretlint WebExtension help web developer to notice exposed credential.
 
 You can add patterns and found your secrets. 
 
-These patterns are based on [@secretlint/secretlint-rule-pattern](https://github.com/secretlint/secretlint/tree/master/packages/%40secretlint/secretlint-rule-pattern]).
+These patterns are based on [@secretlint/secretlint-rule-pattern](https://github.com/secretlint/secretlint/tree/master/packages/%40secretlint/secretlint-rule-pattern).
 Each pattern should have following properties. If match the pattern, report it as error.
 
 - name: pattern name
-- pattern: string or [RegExp-like String](https://github.com/textlint/regexp-string-matcher#regexp-like-string)(/pattern/)
+- pattern: string or [RegExp-like String](https://github.com/textlint/regexp-string-matcher#regexp-like-string) (/pattern/)
 
 Default patterns are defined in [rule.patterns.ts](app/scripts/secretlint/rule.patterns.ts).
 
