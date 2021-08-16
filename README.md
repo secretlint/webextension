@@ -43,6 +43,10 @@ Secretlint WebExtension help web developer to notice exposed credential.
 2. ✅ Disable Cache
 3. Reload page and secretlint report found credentials in your request/response.
 
+## Built-in rules
+
+This Web Extension use [@secretlint/secretlint-rule-preset-recommend](https://github.com/secretlint/secretlint/tree/master/packages/@secretlint/secretlint-rule-preset-recommend/).
+
 ## Config
 
 ### Configurable Patterns
