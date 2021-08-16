@@ -49,6 +49,8 @@ This Web Extension use [@secretlint/secretlint-rule-preset-recommend](https://gi
 
 ## Config
 
+Click "Secretlint" icon on menu.
+
 ### Configurable Patterns
 
 You can add patterns and found your secrets. 
