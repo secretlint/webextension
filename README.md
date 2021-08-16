@@ -1,9 +1,11 @@
 # Secretlint WebExtension
 
-Secretlint founds credentials that are included in your request/response.
+[Secretlint](https://github.com/secretlint/secretlint) founds credentials that are included in your request/response.
 
 - Firefox: <https://addons.mozilla.org/ja/firefox/addon/secretlint/>
 - Chrome: <https://chrome.google.com/webstore/detail/secretlint/hidpojbnemkajlnibhmeilpgoddkjjkf>
+
+This Web Extension integrate [secretlint](https://github.com/secretlint/secretlint) with browser's devTools.
 
 ![screenshot](img.png)
 
