@@ -39,7 +39,7 @@ Secretlint WebExtension help web developer to notice exposed credential.
 
 ## Usage
 
-1. Open Browser's DevTools
+1. Open browser's Developer Tools
 2. ✅ Disable Cache
 3. Reload page and secretlint report found credentials in your request/response.
 
