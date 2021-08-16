@@ -1,6 +1,6 @@
 # Secretlint WebExtension
 
-Check secrets in your request/response using secretlint.
+Secretlint founds credentials that are included in your request/response.
 
 ![screenshot](img.png)
 
@@ -31,6 +31,16 @@ Secretlint WebExtension help web developer to notice exposed credential.
 
 - Install from <https://addons.mozilla.org/ja/firefox/addon/secretlint/>
 - [ ] Chrome
+
+## Usage
+
+1. Open Browser's DevTools
+2. ✅ Disable Cache
+3. Reload page and secretlint report found credentials in your request/response.
+
+## Config
+
+
 
 ## Development
 

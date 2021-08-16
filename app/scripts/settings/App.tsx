@@ -87,7 +87,12 @@ export const App = () => {
                 <button type="submit">Save</button>
             </Form>
             <h2>Configurable Patterns</h2>
-            <p>If match these pattern, report it as error.</p>
+            <p>
+                If match following patterns, report it as error. For more details, see{" "}
+                <a href={"https://github.com/secretlint/webextension#config"} target={"_blank"} rel="noreferrer">
+                    Document📝
+                </a>
+            </p>
             <CodeEditor lang={"json"} value={patternValue} onChange={onChangePatterns} />
         </div>
     );
