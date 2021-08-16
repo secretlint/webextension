@@ -40,7 +40,17 @@ Secretlint WebExtension help web developer to notice exposed credential.
 
 ## Config
 
+### Configurable Patterns
 
+You can add patterns and found your secrets. 
+
+These patterns are based on [@secretlint/secretlint-rule-pattern](https://github.com/secretlint/secretlint/tree/master/packages/%40secretlint/secretlint-rule-pattern]).
+Each pattern should have following properties. If match the pattern, report it as error.
+
+- name: pattern name
+- pattern: string or [RegExp-like String](https://github.com/textlint/regexp-string-matcher#regexp-like-string)(/pattern/)
+
+Default patterns are defined in [rule.patterns.ts](app/scripts/secretlint/rule.patterns.ts).
 
 ## Development
 
