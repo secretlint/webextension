@@ -43,6 +43,10 @@ Secretlint WebExtension help web developer to notice exposed credential.
 2. ✅ Disable Cache
 3. Reload page and secretlint report found credentials in your request/response.
 
+You can check the behavior using demo site:
+
+- Demo: https://secretlint-webextension-demo.netlify.app/
+
 ## Built-in rules
 
 This Web Extension use [@secretlint/secretlint-rule-preset-recommend](https://github.com/secretlint/secretlint/tree/master/packages/@secretlint/secretlint-rule-preset-recommend/).
@@ -60,7 +64,8 @@ If you define following pattern, secretlint does not report it which is matched.
 ```ts
 [
     "NON_SECRETS",
-    "1.1.1.1"
+    "1.1.1.1",
+    "AKIAIOSFODNN7SECRETS",
 ]
 ```
 
