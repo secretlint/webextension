@@ -63,6 +63,7 @@ const lintContentAndSend = async ({
     ) => {
         const harRequest = request.request as Request;
         const [content, mimeType] = await request.getContent();
+        console.log([content, mimeType]);
         const isBinary = mimeType === "base64";
         const url = harRequest.url;
         const headerLinting =
