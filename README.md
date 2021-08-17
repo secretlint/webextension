@@ -51,7 +51,23 @@ This Web Extension use [@secretlint/secretlint-rule-preset-recommend](https://gi
 
 Click "Secretlint" icon on menu.
 
-### Configurable Patterns
+### Allows Patterns
+
+Allow patterns is an array of string or [RegExp-like String](https://github.com/textlint/regexp-string-matcher#regexp-like-string) (/pattern/).
+
+If you define following pattern, secretlint does not report it which is matched.
+
+```ts
+[
+    "1.1.1.1"
+]
+```
+
+Default patterns are defined in [rule.allows.ts](app/scripts/secretlint/rule.allows.ts).
+
+:memo: Prefer Allows pattern than Disallow patterns.
+
+### Disallows Patterns
 
 You can add patterns and found your secrets. 
 

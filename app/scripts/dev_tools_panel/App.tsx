@@ -30,35 +30,42 @@ export const MessageList = () => {
         );
     }
     return (
-        <ul className={"MessageList"}>
+        <div className={"MessageList"}>
             {messages.map((message, i) => {
                 return (
-                    <li key={message.ruleId + i} className={"MessageListItem"}>
-                        <details>
-                            <summary>
-                                <b>{message.ruleId}</b> {message.message}
+                    <div key={message.ruleId + i} className={"MessageListItem"}>
+                        <div>
+                            <div style={{ overflowWrap: "anywhere" }}>
+                                <p style={{ margin: 0 }}>
+                                    🔑{" "}
+                                    {message.docsUrl ? (
+                                        <a href={message.docsUrl} target={"_blank"} rel="noreferrer">
+                                            {message.ruleId}
+                                        </a>
+                                    ) : (
+                                        <b>{message.ruleId}</b>
+                                    )}{" "}
+                                    {message.message}
+                                </p>
                                 <p style={{ margin: 0 }}>
                                     📍{" "}
                                     <a href={message.url} target={"_blank"} rel="noreferrer">
                                         {message.url}
                                     </a>
                                 </p>
-                                {message.docsUrl && (
-                                    <footer>
-                                        📝{" "}
-                                        <a href={message.docsUrl} target={"_blank"} rel="noreferrer">
-                                            {" "}
-                                            Document
-                                        </a>
-                                    </footer>
-                                )}
-                            </summary>
-                            <pre>{JSON.stringify(message, null, 4)}</pre>
-                        </details>
-                    </li>
+                            </div>
+                            <details>
+                                <summary>Details</summary>
+                                <pre style={{ overflowWrap: "anywhere" }}>{JSON.stringify(message, null, 4)}</pre>
+                            </details>
+                        </div>
+                        <div>
+                            <button>Menu</button>
+                        </div>
+                    </div>
                 );
             })}
-        </ul>
+        </div>
     );
 };
 export const App = () => {

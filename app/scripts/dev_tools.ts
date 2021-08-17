@@ -6,6 +6,7 @@ import { SecretLintMessage } from "./types";
 import jsesc from "jsesc";
 import { SettingSchema } from "./settings/SettingSchema";
 import { SCHEMA } from "./settings/SettingSchema.validator";
+import { ALLOWS } from "./secretlint/rule.allows";
 
 const headersToEnv = (headers: Request["headers"]): string => {
     return headers
@@ -21,11 +22,12 @@ const lintContentAndSend = async ({
 }: {
     url: string;
     content: string;
-    setting: SettingSchema;
+    setting: SettingSchema & { allows: string[] };
 }): Promise<SecretLintMessage[]> => {
     const result = await lintContent({
         content,
-        url: url
+        url: url,
+        allows: setting.allows
     });
     if (result.messages.length === 0) {
         return [];
@@ -46,13 +48,16 @@ const lintContentAndSend = async ({
 };
 (async function main() {
     await browser.devtools.panels.create("Secretlint", "/images/icon-192.png", "/pages/dev_tools_panel.html");
-    const storage = await browser.storage.local.get(["settings"]);
+    const storage = await browser.storage.local.get(["settings", "rule.allows"]);
     const setting = {
         sliceBefore: SCHEMA.definitions.SettingSchema.properties.sliceBefore.default,
         sliceAfter: SCHEMA.definitions.SettingSchema.properties.sliceAfter.default,
         enableConsoleIntegration: SCHEMA.definitions.SettingSchema.properties.enableConsoleIntegration.default,
+        allows: storage["rule.allows"] ?? ALLOWS,
         ...storage?.settings
-    } as SettingSchema;
+    } as SettingSchema & {
+        allows: string[];
+    };
     const onRequestFinished = async (
         request: DevtoolsNetwork.Request & { request?: Request; serverIPAddress?: string }
     ) => {
