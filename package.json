@@ -44,7 +44,10 @@
     "lint:fix": "eslint . --fix",
     "clean": "rimraf lib/ module/",
     "update:schema": "create-validator-ts ./app/scripts/settings/SettingSchema.ts",
-    "prepublishOnly": "npm run clean && npm run build"
+    "prepublishOnly": "npm run clean && npm run build",
+    "versionup:patch": "cd app && npm version patch --no-git-tag-version && cd - && npm version patch",
+    "versionup:minor": "cd app && npm version minor --no-git-tag-version && cd - && npm version minor",
+    "versionup:major": "cd app && npm version major --no-git-tag-version && cd - && npm version major"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css}": [
