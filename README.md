@@ -30,7 +30,7 @@ We want to found these exposed credentials.
 Security researcher use proxy software like [Burp Suite](https://portswigger.net/burp), but web developer use DevTools instead of it.
 
 Secretlint WebExtension integrate to DevTools in Chrome/Firefox.
-Secretlint WebExtension help web developer to notice exposed credential.
+This extension help web developer to notice exposed credential.
 
 ## Install
 
@@ -45,17 +45,20 @@ Secretlint WebExtension help web developer to notice exposed credential.
 
 You can check the behavior using demo site:
 
-- Demo: https://secretlint-webextension-demo.netlify.app/
+- Demo: <https://secretlint-webextension-demo.netlify.app/>
 
 ## Built-in rules
 
-This Web Extension use [@secretlint/secretlint-rule-preset-recommend](https://github.com/secretlint/secretlint/tree/master/packages/@secretlint/secretlint-rule-preset-recommend/).
+This Web Extension use [@secretlint/secretlint-rule-preset-recommend](https://github.com/secretlint/secretlint/tree/master/packages/@secretlint/secretlint-rule-preset-recommend/) and built-in disallow patterns.
 
 ## Config
 
-Click "Secretlint" icon on menu.
+You can configure the option of secretlint extension.
 
-### Allows Patterns
+- Click "Secretlint" icon on menu
+- Or, See extensions's "Settings" page
+
+### Allow Patterns
 
 Allow patterns is an array of string or [RegExp-like String](https://github.com/textlint/regexp-string-matcher#regexp-like-string) (/pattern/).
 
@@ -73,7 +76,7 @@ Default patterns are defined in [rule.allows.ts](app/scripts/secretlint/rule.all
 
 :memo: Prefer Allows pattern than Disallow patterns.
 
-### Disallows Patterns
+### Disallow Patterns
 
 You can add patterns and found your secrets. 
 
