@@ -85,15 +85,17 @@ const lintContentAndSend = async ({
         if (setting.enableConsoleIntegration && messages.length > 0) {
             browser.tabs.executeScript({
                 code: `console.group("Found ${messages.length} secrets. For more details see Secretlint panel.");
-${messages.map((message) => {
-    return `console.error("${jsesc(message.ruleId, {
-        quotes: "double"
-    })}: ${jsesc(message.message, {
-        quotes: "double"
-    })}", ${jsesc(message, {
-        quotes: "double"
-    })})`;
-})}
+${messages
+    .map((message) => {
+        return `console.error("${jsesc(message.ruleId, {
+            quotes: "double"
+        })}: ${jsesc(message.message, {
+            quotes: "double"
+        })}", ${jsesc(message, {
+            quotes: "double"
+        })})`;
+    })
+    .join("\n")}
 console.groupEnd("Found ${messages.length} secrets");
 `
             });
