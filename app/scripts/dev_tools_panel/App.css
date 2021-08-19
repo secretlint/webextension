@@ -21,3 +21,7 @@ body {
 .MessageNotFound {
     padding: 12px 24px;
 }
+
+.Message-ruleId {
+    font-weight: 600;
+}

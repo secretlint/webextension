@@ -39,7 +39,12 @@ export const MessageList = () => {
                                 <p style={{ margin: 0 }}>
                                     🔑{" "}
                                     {message.docsUrl ? (
-                                        <a href={message.docsUrl} target={"_blank"} rel="noreferrer">
+                                        <a
+                                            href={message.docsUrl}
+                                            target={"_blank"}
+                                            rel="noreferrer"
+                                            className={"Message-ruleId"}
+                                        >
                                             {message.ruleId}
                                         </a>
                                     ) : (
