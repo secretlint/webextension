@@ -98,6 +98,9 @@ Default patterns are defined in [rule.patterns.ts](app/scripts/secretlint/rule.p
     # Firefox
     yarn dev firefox
 
+- Firefox: open `about:debugging#/runtime/this-firefox` → Load from local
+- Chrome: open `chrome://extensions/` → Load from local
+
 ## Changelog
 
 See [Releases page](https://github.com/secretlint/webextension/releases).
