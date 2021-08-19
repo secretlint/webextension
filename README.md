@@ -7,7 +7,7 @@
 
 This Web Extension integrate [secretlint](https://github.com/secretlint/secretlint) with browser's devTools.
 
-![screenshot](img.png)
+![screenshot](docs/screenshot.png)
 
 ## Features
 
