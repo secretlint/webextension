@@ -9,6 +9,8 @@ This Web Extension integrate [secretlint](https://github.com/secretlint/secretli
 
 ![screenshot](docs/screenshot.png)
 
+:memo: If you want to run secretelint as command line tools, please see [secretlint/secretlint](https://github.com/secretlint/secretlint).
+
 ## Features
 
 - Check that request/response includes credentials
