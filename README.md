@@ -56,7 +56,7 @@ This Web Extension use [@secretlint/secretlint-rule-preset-recommend](https://gi
 You can configure the option of secretlint extension.
 
 - Click "Secretlint" icon on menu
-- Or, See extensions's "Settings" page
+- Or, See This extension's "Settings" page
 
 ### Allow Patterns
 
