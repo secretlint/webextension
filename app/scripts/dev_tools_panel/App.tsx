@@ -64,9 +64,6 @@ export const MessageList = () => {
                                 <pre style={{ overflowWrap: "anywhere" }}>{JSON.stringify(message, null, 4)}</pre>
                             </details>
                         </div>
-                        <div>
-                            <button>Menu</button>
-                        </div>
                     </div>
                 );
             })}
