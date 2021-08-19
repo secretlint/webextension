@@ -87,7 +87,7 @@ const lintContentAndSend = async ({
                 code: `console.group("Found ${messages.length} secrets. For more details see Secretlint panel.");
 ${messages
     .map((message) => {
-        return `console.error("${jsesc(message.ruleId + ":" + message.message, {
+        return `console.warn("${jsesc(message.ruleId + ":" + message.message, {
             quotes: "double"
         })}");`;
     })
