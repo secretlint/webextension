@@ -66,7 +66,7 @@ If you define following pattern, secretlint does not report it which is matched.
 
 ```ts
 [
-    "NON_SECRETS",
+    "/NON_SECRETS/i",
     "1.1.1.1",
     "AKIAIOSFODNN7SECRETS",
 ]
