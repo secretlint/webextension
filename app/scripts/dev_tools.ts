@@ -88,11 +88,14 @@ const lintContentAndSend = async ({
 ${messages
     .map((message) => {
         return `console.error("${jsesc(message.ruleId, {
-            quotes: "double"
+            quotes: "double",
+            wrap: true
         })}: ${jsesc(message.message, {
-            quotes: "double"
+            quotes: "double",
+            wrap: true
         })}", ${jsesc(message, {
-            quotes: "double"
+            quotes: "double",
+            wrap: true
         })})`;
     })
     .join("\n")}
