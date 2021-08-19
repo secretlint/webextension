@@ -88,15 +88,10 @@ const lintContentAndSend = async ({
 ${messages
     .map((message) => {
         return `console.error("${jsesc(message.ruleId, {
-            quotes: "double",
-            wrap: true
+            quotes: "double"
         })}: ${jsesc(message.message, {
-            quotes: "double",
-            wrap: true
-        })}", ${jsesc(message, {
-            quotes: "double",
-            wrap: true
-        })})`;
+            quotes: "double"
+        })}");`;
     })
     .join("\n")}
 console.groupEnd("Found ${messages.length} secrets");
