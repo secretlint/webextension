@@ -2,7 +2,7 @@ import { lintSource } from "@secretlint/core";
 // @ts-ignore
 import { rules } from "@secretlint/secretlint-rule-preset-recommend";
 import pattern from "@secretlint/secretlint-rule-pattern";
-import { PATTERNS } from "./rule.patterns";
+import { RULE_DEFAULT_PATTERNS } from "./rule.patterns";
 
 /**
  * HeaderName=HeaderValue
@@ -34,7 +34,7 @@ export const lintContent = ({ content, url, allows }: { content: string; url: st
                             rule: pattern,
                             options: {
                                 // based on https://github.com/l4yton/RegHex
-                                patterns: PATTERNS,
+                                patterns: RULE_DEFAULT_PATTERNS,
                                 allows
                             }
                         }

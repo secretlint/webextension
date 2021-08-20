@@ -5,7 +5,7 @@ import { sendMessage } from "webext-bridge";
 import { SecretLintMessage } from "./types";
 import { SettingSchema } from "./settings/SettingSchema";
 import { SCHEMA } from "./settings/SettingSchema.validator";
-import { ALLOWS } from "./secretlint/rule.allows";
+import { RULES_DEFAULT_ALLOWS } from "./secretlint/rule.allows";
 
 const headersToEnv = (headers: Request["headers"]): string => {
     return headers
@@ -53,7 +53,7 @@ const lintContentAndSend = async ({
         sliceBefore: SCHEMA.definitions.SettingSchema.properties.sliceBefore.default,
         sliceAfter: SCHEMA.definitions.SettingSchema.properties.sliceAfter.default,
         enableConsoleIntegration: SCHEMA.definitions.SettingSchema.properties.enableConsoleIntegration.default,
-        allows: storage["rule.allows"] ?? ALLOWS,
+        allows: storage["rule.allows"] ?? RULES_DEFAULT_ALLOWS,
         ...storage?.settings
     } as SettingSchema & {
         allows: string[];

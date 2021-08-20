@@ -7,7 +7,7 @@
  * pattern: string or regexp-like string(/pattern/)
  *
  */
-export const PATTERNS = [
+export const RULE_DEFAULT_PATTERNS = [
     {
         name: "Artifactory API Token",
         pattern: '/(?:\\s|=|:|"|^)AKC[a-zA-Z0-9]{10,}/'

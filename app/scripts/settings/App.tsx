@@ -3,9 +3,9 @@ import React, { useCallback, useEffect, useState } from "react";
 import { SCHEMA } from "./SettingSchema.validator";
 import { browser } from "webextension-polyfill-ts";
 import { SettingSchema } from "./SettingSchema";
-import { PATTERNS } from "../secretlint/rule.patterns";
+import { RULE_DEFAULT_PATTERNS } from "../secretlint/rule.patterns";
 import { CodeEditor } from "./CodeEditor";
-import { ALLOWS } from "../secretlint/rule.allows";
+import { RULES_DEFAULT_ALLOWS } from "../secretlint/rule.allows";
 
 const useStorageLocal = <V extends any>(name: string, initialValue?: V) => {
     const [state, setState] = useState<V | undefined>(initialValue);
@@ -36,8 +36,8 @@ type Pattern = { name: string; pattern: string };
 type Patterns = Pattern[];
 export const useApp = () => {
     const [settings, setSettings] = useStorageLocal<Partial<SettingSchema>>("settings");
-    const [patterns, setPatterns] = useStorageLocal<Patterns>("rule.patterns", PATTERNS);
-    const [allows, setAllows] = useStorageLocal<string[]>("rule.allows", ALLOWS);
+    const [patterns, setPatterns] = useStorageLocal<Patterns>("rule.patterns", RULE_DEFAULT_PATTERNS);
+    const [allows, setAllows] = useStorageLocal<string[]>("rule.allows", RULES_DEFAULT_ALLOWS);
     const [patternValue, setPatternValue] = useState(JSON.stringify(patterns, null, 2));
     const [allowsValue, setAllowsValue] = useState(JSON.stringify(allows, null, 2));
     useEffect(() => {
