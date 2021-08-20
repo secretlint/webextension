@@ -92,7 +92,7 @@ Default patterns are defined in [rule.patterns.ts](app/scripts/secretlint/rule.p
 
 ## Development
 
-Build
+Build this extension from source code:
 
     # Require Node.js and Yarn
     yarn install
@@ -101,7 +101,7 @@ Build
     # Firefox
     yarn dev firefox
 
-Load
+Load the built extension:
 
 - Firefox: open `about:debugging#/runtime/this-firefox` → Load from local
 - Chrome: open `chrome://extensions/` → Load from local
