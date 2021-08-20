@@ -92,11 +92,16 @@ Default patterns are defined in [rule.patterns.ts](app/scripts/secretlint/rule.p
 
 ## Development
 
+Build
+
+    # Require Node.js and Yarn
     yarn install
     # Chrome
     yarn dev chrome
     # Firefox
     yarn dev firefox
+
+Load
 
 - Firefox: open `about:debugging#/runtime/this-firefox` → Load from local
 - Chrome: open `chrome://extensions/` → Load from local
