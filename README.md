@@ -105,7 +105,7 @@ If you define following pattern, secretlint does not report it which is matched.
 
 Default patterns are defined in [rule.allows.ts](app/scripts/secretlint/rule.allows.ts).
 
-:memo: Prefer Allows pattern than Disallow patterns.
+:memo: Prefer Allow patterns than Disallow patterns.
 
 ### Disallow Patterns
 
