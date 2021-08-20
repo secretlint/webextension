@@ -25,8 +25,8 @@ This extension requires following permissions
 
 - `"<all_urls>"`
     - It is used for extending devTools and "Console Integration"
-    - [devtools API](https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/Extending_the_developer_tools) requires this permission
-    - "Console Integration" uses [content_scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_scripts). Content Scripts require this permission
+    - [devtools API](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Extending_the_developer_tools) requires this permission
+    - "Console Integration" uses [content_scripts](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_scripts). Content Scripts require this permission
     - Related issue: [Reduce to use content scripts · Issue #5](https://github.com/secretlint/webextension/issues/5)
 - `"webNavigation"`
     - It is used for clearing lint messages when move pages
