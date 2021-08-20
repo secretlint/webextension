@@ -15,6 +15,17 @@
       "scripts/background.js"
     ]
   },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/contentScript.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start"
+    }
+  ],
   "devtools_page": "pages/dev_tools.html",
   "browser_action": {
     "default_icon": {

@@ -3,7 +3,6 @@ import type { Request } from "har-format";
 import { lintContent } from "./secretlint/lint";
 import { sendMessage } from "webext-bridge";
 import { SecretLintMessage } from "./types";
-import jsesc from "jsesc";
 import { SettingSchema } from "./settings/SettingSchema";
 import { SCHEMA } from "./settings/SettingSchema.validator";
 import { ALLOWS } from "./secretlint/rule.allows";
@@ -83,18 +82,7 @@ const lintContentAndSend = async ({
                 : Promise.resolve([]);
         const messages = (await Promise.all([headerLinting, contentLinting])).flat();
         if (setting.enableConsoleIntegration && messages.length > 0) {
-            browser.tabs.executeScript({
-                code: `console.group("Found ${messages.length} secrets. For more details see Secretlint panel.");
-${messages
-    .map((message) => {
-        return `console.warn("${jsesc(`${message.ruleId}: ${message.message}`, {
-            quotes: "double"
-        })}");`;
-    })
-    .join("\n")}
-console.groupEnd("Found ${messages.length} secrets");
-`
-            });
+            sendMessage("content-script:log-lint-messages", messages, "content-script");
         }
     };
     browser.devtools.network.onRequestFinished.addListener(onRequestFinished);
