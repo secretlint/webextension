@@ -19,7 +19,7 @@ This Web Extension integrate [secretlint](https://github.com/secretlint/secretli
     - Output found credentials to "Console" panel(option)
     - Output found credentials to "Secretlint" panel
 
-This extension is written by JavaScript and It do not send any your request/response to another server.
+This extension is written by JavaScript and It do not send your request/response to another server.
 All process is done in memory.
 
 This exntension only scans secrents when you open developer tools.
