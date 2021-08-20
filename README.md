@@ -31,7 +31,7 @@ This extension requires following permissions
 - `"webNavigation"`
     - It is used for clearing lint messages when move pages
 - `"storage"`
-    - It is used for user settings
+    - It is used for [user config](#Config)
 
 📝 Other Notes
 
