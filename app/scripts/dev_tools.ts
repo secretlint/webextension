@@ -42,6 +42,7 @@ const lintContentAndSend = async ({
             url
         };
     });
+    // send lint results to background page for pulling these from devtools panel
     await sendMessage("lint-messages", lintMessages, "background");
     return lintMessages;
 };
