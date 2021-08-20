@@ -33,6 +33,8 @@ This extension requires following permissions
 - `"storage"`
     - It is used for [user config](#Config)
 
+`permissions` is defeind in [manifest.json](./app/manifest.json).
+
 📝 Other Notes
 
 **In Memory Process**
