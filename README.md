@@ -4,6 +4,7 @@
 
 - Firefox: <https://addons.mozilla.org/ja/firefox/addon/secretlint/>
 - Chrome: <https://chrome.google.com/webstore/detail/secretlint/hidpojbnemkajlnibhmeilpgoddkjjkf>
+- Install from Source: See [Development](#Development) section
 
 This Web Extension integrate [secretlint](https://github.com/secretlint/secretlint) with browser's devTools.
 
@@ -17,6 +18,12 @@ This Web Extension integrate [secretlint](https://github.com/secretlint/secretli
 - DevTools integration
     - Output found credentials to "Console" panel(option)
     - Output found credentials to "Secretlint" panel
+
+This extension is written by JavaScript and It do not send any your request/response to another server.
+All process is done in memory.
+
+This exntension only scans secrents when you open developer tools.
+This limitation come from [devtools API](https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/Extending_the_developer_tools).
 
 ## Motivation
 
