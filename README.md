@@ -19,11 +19,33 @@ This Web Extension integrate [secretlint](https://github.com/secretlint/secretli
     - Output found credentials to "Console" panel(option)
     - Output found credentials to "Secretlint" panel
 
+## Permissions
+
+This extension requires following permissions
+
+- `"<all_urls>"`
+    - It is used for extending devTools and "Console Integration"
+    - [devtools API](https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/Extending_the_developer_tools) requires this permission
+    - "Console Integration" uses [content_scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_scripts). Content Scripts require this permission
+    - Related issue: [Reduce to use content scripts · Issue #5](https://github.com/secretlint/webextension/issues/5)
+- `"webNavigation"`
+    - It is used for clearing lint messages when move pages
+- `"storage"`
+    - It is used for user settings
+
+📝 Other Notes
+
+**In Memory Process**
+
 This extension is written by JavaScript and It do not send your request/response to another server.
 All process is done in memory.
 
-This exntension only scans secrents when you open developer tools.
+**Scan timing**
+
+This exntension only scans secrents during you open developer tools.
 This limitation come from [devtools API](https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/Extending_the_developer_tools).
+
+If you close the devTools, this extension does not scan any request/response.
 
 ## Motivation
 
