@@ -4,8 +4,8 @@
   ],
   "packageRules": [
     {
+      "groupName": "all dependencies",
       "matchPackagePrefixes": ["secretlint", "@secretlint/"],
-      "labels": ["linting"],
       "major": {
         "enabled": true
       }
