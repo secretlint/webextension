@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "@azu:maintenance"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePrefixes": ["secretlint", "@secretlint/"],
+      "labels": ["linting"],
+      "major": {
+        "enabled": true
+      }
+    }
+  ]
+}
