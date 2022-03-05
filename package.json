@@ -92,7 +92,7 @@
     "@rjsf/core": "^3.0.0",
     "@secretlint/core": "^3.3.0",
     "@secretlint/secretlint-rule-pattern": "^3.3.0",
-    "@secretlint/secretlint-rule-preset-recommend": "^3.3.0",
+    "@secretlint/secretlint-rule-preset-recommend": "^5.0.1",
     "codemirror": "^5.62.2",
     "react": "^17.0.2",
     "react-codemirror2": "^7.2.1",
