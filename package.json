@@ -90,9 +90,9 @@
   },
   "dependencies": {
     "@rjsf/core": "^3.2.1",
-    "@secretlint/core": "^3.3.0",
-    "@secretlint/secretlint-rule-pattern": "^3.3.0",
-    "@secretlint/secretlint-rule-preset-recommend": "^3.3.0",
+    "@secretlint/core": "^5.1.0",
+    "@secretlint/secretlint-rule-pattern": "^5.1.0",
+    "@secretlint/secretlint-rule-preset-recommend": "^5.1.0",
     "codemirror": "^5.65.2",
     "react": "^17.0.2",
     "react-codemirror2": "^7.2.1",
