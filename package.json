@@ -101,6 +101,6 @@
     "webextension-polyfill-ts": "^0.26.0"
   },
   "resolutions": {
-    "webpack": "5.70.0"
+    "webpack": "5.72.0"
   }
 }
