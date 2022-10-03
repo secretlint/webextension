@@ -62,12 +62,12 @@
   },
   "devDependencies": {
     "@types/codemirror": "^5.60.5",
-    "@types/har-format": "^1.2.8",
+    "@types/har-format": "^1.2.9",
     "@types/jsesc": "^3.0.1",
     "@types/mocha": "^9.1.1",
-    "@types/node": "^16.11.30",
-    "@types/react": "^17.0.44",
-    "@types/react-dom": "^17.0.16",
+    "@types/node": "^16.11.64",
+    "@types/react": "^17.0.50",
+    "@types/react-dom": "^17.0.17",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "create-validator-ts": "^2.0.0",
@@ -86,14 +86,14 @@
     "ts-node-test-register": "^10.0.0",
     "typescript": "^4.3.5",
     "webextension-toolbox": "^4.0.3",
-    "webpack-watched-glob-entries-plugin": "^2.2.4"
+    "webpack-watched-glob-entries-plugin": "^2.2.5"
   },
   "dependencies": {
     "@rjsf/core": "^3.2.1",
     "@secretlint/core": "^3.3.0",
     "@secretlint/secretlint-rule-pattern": "^3.3.0",
     "@secretlint/secretlint-rule-preset-recommend": "^3.3.0",
-    "codemirror": "^5.65.3",
+    "codemirror": "^5.65.9",
     "react": "^17.0.2",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^17.0.2",

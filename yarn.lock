@@ -1309,10 +1309,10 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/har-format@^1.2.8":
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/@types/har-format/-/har-format-1.2.8.tgz#e6908b76d4c88be3db642846bb8b455f0bfb1c4e"
-  integrity sha512-OP6L9VuZNdskgNN3zFQQ54ceYD8OLq5IbqO4VK91ORLfOm7WdT/CiT/pHEBSQEqCInJ2y3O6iCm/zGtPElpgJQ==
+"@types/har-format@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@types/har-format/-/har-format-1.2.9.tgz#b9b3a9bfc33a078e7d898a00b09662910577f4a4"
+  integrity sha512-rffW6MhQ9yoa75bdNi+rjZBAvu2HhehWJXlhuWXnWdENeuKe82wUgAwxYOb7KRKKmxYN+D/iRKd2NDQMLqlUmg==
 
 "@types/jsesc@^3.0.1":
   version "3.0.1"
@@ -1344,10 +1344,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.13.tgz#7dfd9c14661edc65cccd43a29eb454174642370d"
   integrity sha512-bLL69sKtd25w7p1nvg9pigE4gtKVpGTPojBFLMkGHXuUgap2sLqQt2qUnqmVCDfzGUL0DRNZP+1prIZJbMeAXg==
 
-"@types/node@^16.11.30":
-  version "16.11.30"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.30.tgz#895ca1078aa682c78e0fe30280b952e69e48ab61"
-  integrity sha512-cw8NVA2xHXysO4dmSxePZybEoMWhnrimf5+b1vOh5SV7QB8ZnGm2yTvGllXuwwMQNYpYwGB4HCrVJkZD3o9Oew==
+"@types/node@^16.11.64":
+  version "16.11.64"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.64.tgz#9171f327298b619e2c52238b120c19056415d820"
+  integrity sha512-z5hPTlVFzNwtJ2LNozTpJcD1Cu44c4LNuzaq1mwxmiHWQh2ULdR6Vjwo1UGldzRpzL0yUEdZddnfqGW2G70z6Q==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -1364,17 +1364,26 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
 
-"@types/react-dom@^17.0.16":
-  version "17.0.16"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.16.tgz#7caba93cf2806c51e64d620d8dff4bae57e06cc4"
-  integrity sha512-DWcXf8EbMrO/gWnQU7Z88Ws/p16qxGpPyjTKTpmBSFKeE+HveVubqGO1CVK7FrwlWD5MuOcvh8gtd0/XO38NdQ==
+"@types/react-dom@^17.0.17":
+  version "17.0.17"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.17.tgz#2e3743277a793a96a99f1bf87614598289da68a1"
+  integrity sha512-VjnqEmqGnasQKV0CWLevqMTXBYG9GbwuE6x3VetERLh0cq2LTptFE73MrQi2S7GkKXCf2GgwItB/melLnxfnsg==
   dependencies:
     "@types/react" "^17"
 
-"@types/react@^17", "@types/react@^17.0.44":
+"@types/react@^17":
   version "17.0.44"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.44.tgz#c3714bd34dd551ab20b8015d9d0dbec812a51ec7"
   integrity sha512-Ye0nlw09GeMp2Suh8qoOv0odfgCoowfM/9MG6WeRD60Gq9wS90bdkdRtYbRkNhXOpG4H+YXGvj4wOWhAC0LJ1g==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.50":
+  version "17.0.50"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.50.tgz#39abb4f7098f546cfcd6b51207c90c4295ee81fc"
+  integrity sha512-ZCBHzpDb5skMnc1zFXAXnL3l1FAdi+xZvwxK+PkglMmBrwjpp9nKaWuEvrGnSifCJmBFGxZOOFuwC6KH/s0NuA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -2309,10 +2318,10 @@ clone-regexp@^1.0.0:
     is-regexp "^1.0.0"
     is-supported-regexp-flag "^1.0.0"
 
-codemirror@^5.65.3:
-  version "5.65.3"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.65.3.tgz#2d029930d5a293bc5fb96ceea64654803c0d4ac7"
-  integrity sha512-kCC0iwGZOVZXHEKW3NDTObvM7pTIyowjty4BUqeREROc/3I6bWbgZDA3fGDwlA+rbgRjvnRnfqs9SfXynel1AQ==
+codemirror@^5.65.9:
+  version "5.65.9"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.65.9.tgz#ec70c92aa206ee4c9853d5f1e7c4ed356cdab68c"
+  integrity sha512-19Jox5sAKpusTDgqgKB5dawPpQcY+ipQK7xoEI+MVucEF9qqFaXpeqY1KaoyGBso/wHQoDa4HMMxMjdsS3Zzzw==
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -6438,10 +6447,10 @@ webpack-watched-glob-entries-plugin@2.1.9:
     glob "^7.1.6"
     glob-base "^0.3.0"
 
-webpack-watched-glob-entries-plugin@^2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/webpack-watched-glob-entries-plugin/-/webpack-watched-glob-entries-plugin-2.2.4.tgz#32722c942d195df25042ec480760c48353b838d2"
-  integrity sha512-yOEHAVmOjpwbdoNUjTsjVrXsgO5oH7fKzNAWndmUqckr2F2RsERdW7GjVpgysv8mpEiPnEp5TTQQfaGySSUEqg==
+webpack-watched-glob-entries-plugin@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/webpack-watched-glob-entries-plugin/-/webpack-watched-glob-entries-plugin-2.2.5.tgz#7175ba4e8cebfdd22446ff80d41e70b7f0eeeb7a"
+  integrity sha512-QsYNdbQ9z9tL4ar7TstCTkz7FEMVU9wlSklgo8Mm3XluwQq7wnvnCO1D+oP4W1itKxowKeereI6SpvPok1D8Ew==
   dependencies:
     glob "^7.1.6"
     glob-parent ">=6.0.1"
