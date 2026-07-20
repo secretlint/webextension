@@ -11,9 +11,9 @@ jobs:
         node-version: [12, 14, 16]
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3
       - name: setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
           cache: "yarn"
           node-version: ${{ matrix.node-version }}
